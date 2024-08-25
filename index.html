@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boilermakers - FIFO from Perth, WA | Ohlmec Engineering</title>
+    <style>
+        body{font-family:Arial,sans-serif;max-width:800px;margin:20px auto;padding:20px;}
+        .job-listing{background-color:white;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,0.1);overflow:hidden;border:3px solid #0066cc;}
+        .job-header{background:#0066cc;color:white;padding:15px;text-align:center;position:relative;display:flex;align-items:center;justify-content:space-between;}
+        .logo-placeholder{width:50px;height:50px;background-color:white;border-radius:50%;display:flex;justify-content:center;align-items:center;font-weight:bold;color:#0066cc;font-size:24px;}
+        .job-title{flex-grow:1;text-align:left;margin-left:15px;}
+        .job-title h1{margin:0 0 3px 0;font-size:20px;}
+        .job-title p{margin:0;font-size:14px;}
+        .content{padding:15px 15px 5px;position:relative;overflow:hidden;min-height:150px;}
+        .teaser-section{display:none;}
+        .teaser-section.active{display:block;}
+        .teaser-section h3{margin-top:0;margin-bottom:8px;font-size:18px;}
+        .teaser-section ul{margin:0;padding-left:20px;}
+        .teaser-section li{margin-bottom:4px;}
+        .nav-container{display:flex;align-items:center;justify-content:center;padding:2px 0;}
+        .nav-dots{text-align:center;margin:0 10px;}
+        .dot{height:8px;width:8px;background-color:#bbb;border-radius:50%;display:inline-block;margin:0 3px;cursor:pointer;}
+        .dot.active{background-color:#0066cc;}
+        .arrow{background-color:transparent;color:#0066cc;padding:2px 8px;cursor:pointer;user-select:none;border:none;font-size:20px;font-weight:bold;}
+        .apply-button{display:block;width:100%;padding:10px;background-color:#ff6600;color:white;text-align:center;text-decoration:none;font-weight:bold;border:none;cursor:pointer;font-size:16px;}
+        .apply-button:hover{background-color:#ff8533;}
+        .full-ad-toggle{display:flex;align-items:center;justify-content:flex-end;padding:3px 15px;background-color:#f0f8ff;}
+        .full-ad-toggle label{margin-left:5px;font-size:14px;}
+        .full-job-ad{display:none;padding:15px 15px 5px;}
+    </style>
+</head>
+<body>
+    <div class="job-listing">
+        <div class="job-header">
+            <div class="logo-placeholder">OE</div>
+            <div class="job-title">
+                <h1>Boilermakers - FIFO from Perth, WA</h1>
+                <p>Ohlmec Engineering</p>
+            </div>
+        </div>
+        <div class="full-ad-toggle">
+            <input type="checkbox" id="fullAdToggle" onclick="toggleFullAd()">
+            <label for="fullAdToggle">Show Full Job Ad</label>
+        </div>
+        <div id="jobTeaser" class="content">
+            <div class="teaser-section active" id="section1">
+                <h3>Overview 🔍</h3>
+                <ul>
+                    <li>🚀 Immediate start opportunities available</li>
+                    <li>🔄 Rolling Roster, Shift Covers or Shutdowns</li>
+                    <li>🛠️ No fuss approach to work with streamlined processes</li>
+                    <li>✈️ FIFO from Perth, WA to various mine sites</li>
+                </ul>
+            </div>
+            <div class="teaser-section" id="section2">
+                <h3>Requirements 📋</h3>
+                <ul>
+                    <li>🏅 Trade Qualified Boilermaker</li>
+                    <li>⛏️ Mine site experience</li>
+                    <li>🇦🇺 Australian Working Rights</li>
+                    <li>🩺 Ability to pass pre-employment medical and drug test</li>
+                </ul>
+            </div>
+            <div class="teaser-section" id="section3">
+                <h3>Benefits 🎉</h3>
+                <ul>
+                    <li>💰 Weekly pay and competitive rates</li>
+                    <li>🏗️ Multiple roles, projects and shutdowns available</li>
+                    <li>🤝 Support from management</li>
+                    <li>📈 Career progression opportunities</li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav-container">
+            <button class="arrow" onclick="changeSection(-1)">&#10094;</button>
+            <div class="nav-dots">
+                <span class="dot active" onclick="showSection(1)"></span>
+                <span class="dot" onclick="showSection(2)"></span>
+                <span class="dot" onclick="showSection(3)"></span>
+            </div>
+            <button class="arrow" onclick="changeSection(1)">&#10095;</button>
+        </div>
+        <div id="fullJobAd" class="full-job-ad">
+            <h3>Full Job Description</h3>
+            <h4>Role Overview</h4>
+            <ul>
+                <li>Trade Qualified Boilermakers needed for immediate start</li>
+                <li>Multiple works running throughout the year</li>
+                <li>Opportunity for Rolling Roster, Shift Covers or Shutdowns</li>
+                <li>FIFO from Perth, WA to various mine sites in Western Australia</li>
+            </ul>
+            <h4>Requirements</h4>
+            <ul>
+                <li>Trade Qualified Boilermaker</li>
+                <li>Australian Working Rights (No sponsorships available)</li>
+                <li>Mine site experience</li>
+                <li>Ability to pass pre-employment medical and drug test</li>
+                <li>Confined Space, EWP and Working at Heights certifications (or willingness to obtain)</li>
+                <li>Friendly attitude, willingness to learn and teach when necessary</li>
+                <li>Ability to work with others safely and efficiently at all times</li>
+            </ul>
+            <h4>Benefits</h4>
+            <ul>
+                <li>Open and honest communication about available work</li>
+                <li>Multiple roles, projects and shutdowns now and in the future</li>
+                <li>Weekly pay and competitive rates</li>
+                <li>Support from management</li>
+                <li>Treated as an important part of the business</li>
+                <li>Streamlined onboarding, mobilisation and on-site processes</li>
+                <li>Career progression opportunities within Ohlmec Engineering</li>
+            </ul>
+        </div>
+        <a href="https://www.ohlmec.com.au/careers/" class="apply-button" target="_blank">Apply Now</a>
+    </div>
+
+    <script>
+        let currentSection = 1;
+        let autoPlayInterval;
+
+        function showSection(n) {
+            let sections = document.getElementsByClassName("teaser-section");
+            let dots = document.getElementsByClassName("dot");
+            
+            for (let i = 0; i < sections.length; i++) {
+                sections[i].classList.remove("active");
+                dots[i].classList.remove("active");
+            }
+            
+            sections[n-1].classList.add("active");
+            dots[n-1].classList.add("active");
+            currentSection = n;
+        }
+
+        function changeSection(n) {
+            let newSection = currentSection + n;
+            if (newSection > 3) newSection = 1;
+            if (newSection < 1) newSection = 3;
+            showSection(newSection);
+            resetAutoPlay();
+        }
+
+        function toggleFullAd() {
+            const jobTeaser = document.getElementById("jobTeaser");
+            const fullJobAd = document.getElementById("fullJobAd");
+            const navContainer = document.querySelector(".nav-container");
+            const isChecked = document.getElementById("fullAdToggle").checked;
+            
+            if (isChecked) {
+                jobTeaser.style.display = 'none';
+                fullJobAd.style.display = 'block';
+                navContainer.style.display = 'none';
+                stopAutoPlay();
+            } else {
+                jobTeaser.style.display = 'block';
+                fullJobAd.style.display = 'none';
+                navContainer.style.display = 'flex';
+                startAutoPlay();
+            }
+        }
+
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(() => {
+                changeSection(1);
+            }, 2000); // Change section every 2 seconds
+        }
+
+        function stopAutoPlay() {
+            clearInterval(autoPlayInterval);
+        }
+
+        function resetAutoPlay() {
+            stopAutoPlay();
+            startAutoPlay();
+        }
+
+        // Start auto-play when the page loads
+        window.onload = startAutoPlay;
+    </script>
+</body>
+</html>
